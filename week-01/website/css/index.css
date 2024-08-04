@@ -61,3 +61,11 @@ input[type=text]{
     background-position-x: 5%;
     background-position-y: center;
 }
+
+.theme{
+    width: 20px;
+}
+
+.theme:hover{
+    background-color: #9ba3b442;
+}
