@@ -5,7 +5,7 @@ body{
 
 .top-link{
     margin-left: 25px;
-    color: gray;
+    color: #9ba3b4;
     cursor: pointer;
     text-decoration: none;
 }
@@ -52,4 +52,12 @@ body{
 
 .a-color{
     color: #0078d4;
+}
+
+input[type=text]{
+    background-image: url(https://code.visualstudio.com/assets/icons/search-dark.svg);
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    background-position-x: 5%;
+    background-position-y: center;
 }
