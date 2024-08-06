@@ -31,7 +31,7 @@ function greet(name) {
 
 //* Function call
 let message = greet("Aryan");
-console.log(message); //* Hello, Aryan
+console.log(message);
 
 function add(a, b){
     return a + b;
@@ -61,13 +61,13 @@ for(let i = 0; i < users1.length; i++){
 
 //* For loop
 for (let i = 0; i < 5; i++) {
-    console.log(i); //* Outputs 0 to 4
+    console.log(i);
 }
 
 //* While loop
 let j = 0;
 while (j < 5) {
-    console.log(j); //* Outputs 0 to 4
+    console.log(j);
     j++;
 }
 
@@ -84,7 +84,7 @@ for(let i = 0; i <= 5; i++){
 }
 console.log(sumOfNumbers)
 
-// Objects
+//* Objects
 let userAryan = {
 	name: "Aryan",
 	age: 23,
@@ -114,14 +114,21 @@ console.log( userAryan.name + " age is " + userAryan.age + '.');
 console.log('Hi ' + userAryan.findGender() + ' ' + userAryan.name + " age is " + userAryan.age + '.');
 console.log('Hi ' + userAryan.findGender() + ' ' + userAryan.name + " age is " + userAryan.age + " and he is " + userAryan.canVote() + ' to vote.');
 
-// Array
+//* Array
 const users2 = ['Raja', 'Rana', 'Aryan'];
 const totalUsers = users2.length;
 const firstUser = users2[0];
 console.log(totalUsers);
 console.log(firstUser);
 
-// Array of Objects
+function filterEvenNumber(arr){
+    return arr.filter(num => num % 2 === 0 && num > 0);
+}
+
+let arr1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(filterEvenNumber(arr1));
+
+//* Array of Objects
 const users3 = [{
     name: "Raja",
     age: 22,
@@ -136,7 +143,22 @@ const user1Age = users3[0].age
 console.log(user1);
 console.log(user1Age);
 
-// Object of Objects
+function filterAdultUsers(peoples){
+    return peoples.filter(people => people.age > 17);
+}
+
+let peoples1 = [
+    { name: "Alice", age: 25, },
+    { name: "Bob", age: 17, },
+    { name: "Charlie", age: 19, },
+    { name: "David", age: 16,},
+    { name: "Eve", age: 22, },
+
+]
+
+console.log(filterAdultUsers(peoples1));
+
+//* Object of Objects
 const user4 = {
 	name: "Raja",
 	age: 22,
@@ -149,3 +171,17 @@ const user4 = {
 
 const city = user4.address.city;
 console.log(city);
+
+function filterAdultMale(malePeoples){
+    return malePeoples.filter(malePeople => malePeople.age > 17 && malePeople.gender === 'Male');
+}
+
+let peoples2 = [
+        { name: "Alice", age: 25, gender: 'Female' },
+        { name: "Bob", age: 17, gender: 'Male' },
+        { name: "Charlie", age: 19, gender: 'Male' },
+        { name: "David", age: 26, gender: 'Male' },
+        { name: "Eve", age: 22, gender: 'Female' },
+]
+
+console.log(filterAdultMale(peoples2));
