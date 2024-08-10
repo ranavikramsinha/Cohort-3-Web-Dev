@@ -23,17 +23,23 @@
 // console.log(constents3);
 
 
-
+//* Asynchronous
 const fs = require("fs");
 
 function print(err, data){
-  console.log(data);
+  if(err){
+    console.log('File not found');
+  } else{
+    console.log(data);
+  }
 }
 
-fs.readFile("week-02/a.txt", "utf-8", print);
+fs.readFile("week-02/a.txt", "utf-8", print); //* passing the name(signature) of the function print
 
 fs.readFile("week-02/b.txt", "utf-8", print);
 
 fs.readFile("week-02/a.txt", "utf-8", print);
+
+fs.readFile("week-02/ab.txt", "utf-8", print);
 
 console.log('Done!');
