@@ -26,14 +26,14 @@
 
 const fs = require("fs");
 
-fs.readFile("week-02/a.txt", "utf-8", function (err, contents) {
-  console.log(contents);
-});
+function print(err, data){
+  console.log(data);
+}
 
-fs.readFile("week-02/b.txt", "utf-8", function (err, contents) {
-  console.log(contents);
-});
+fs.readFile("week-02/a.txt", "utf-8", print);
 
-fs.readFile("week-02/a.txt", "utf-8", function (err, contents) {
-  console.log(contents);
-});
+fs.readFile("week-02/b.txt", "utf-8", print);
+
+fs.readFile("week-02/a.txt", "utf-8", print);
+
+console.log('Done!');
