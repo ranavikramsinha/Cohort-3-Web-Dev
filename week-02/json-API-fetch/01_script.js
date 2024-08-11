@@ -30,6 +30,33 @@ const button = document.querySelector("button");
 
 // });
 
+// button.addEventListener("click", () =>{
+
+//   const xhr = new XMLHttpRequest()
+
+//   // console.log(xhr);
+
+//   // xhr.responseType = 'json';
+
+//   // xhr.onload = () => {
+//   //   // console.log(xhr.response)
+//   //   // console.log(JSON.parse(xhr.response))
+//   //   image.src = xhr.response.message
+//   //   console.log(xhr)
+//   // }
+
+//   xhr.addEventListener('load', () => {
+//     // console.log(xhr.response)
+//     // console.log(JSON.parse(xhr.response))
+//     image.src = xhr.response.message
+//     console.log(xhr);
+//   })
+
+//   xhr.open('GET', 'http://httpbin.org/delay/3', false)
+//   xhr.send()
+
+// });
+
 //* fetch
 button.addEventListener("click", () =>
   fetch("https://dog.ceo/api/breeds/image/random")
@@ -39,6 +66,17 @@ button.addEventListener("click", () =>
       console.log(json.message);
       // userData = json;
       image.src = json.message;
+    })
+);
+
+//* fetch with delay
+button.addEventListener("click", () =>
+  fetch("http://httpbin.org/delay/3")
+    .then((response) => response.json())
+    .then((json) => {
+      console.log("Got the data");
+      console.log(json);
+      // userData = json;
     })
 );
 
