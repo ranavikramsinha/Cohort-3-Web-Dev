@@ -36,3 +36,15 @@ class Rectangle {
 
  const rect2 = new Rectangle(20, 40, 'green');
  const area2 = rect2.area();
+
+ const date = new Date();
+ console.log(date);
+ console.log(date.getDay());
+ console.log(date.getMonth());
+ console.log(date.getFullYear());
+
+ const map = new Map();
+ map.set('name', 'Alice');
+ map.set('age', 30);
+ console.log(map.get('name'));
+ console.log(map.get('age'));
