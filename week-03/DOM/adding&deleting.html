@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding & Deleting Element (DOM)</title>
+    <style>
+        body{
+            background-color: #222222;
+            color: #ffffff;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button onclick="addTodo()">Add Todo's</button>
+</body>
+<script>
+    let counter = 1;
+    function addTodo(){
+        const inputElement = document.querySelector('input');
+        const inputValue = inputElement.value;
+
+        const divElements = document.createElement('div');
+        divElements.id = `todo${counter}`;
+        divElements.innerHTML = `<span>${inputValue}</span><span>&nbsp&nbsp</span><button onclick="deleteNode(${counter})">Delete</button>`;
+
+        document.querySelector('body').appendChild(divElements);
+        counter++;
+    }
+
+    function deleteNode(index){
+        const delElement = document.querySelector('#todo' + index);
+        delElement.parentNode.removeChild(delElement);
+
+        // const parentElement = document.querySelector('body');
+        // parentElement.removeChild(delElement);
+    }
+</script>
+</html>
