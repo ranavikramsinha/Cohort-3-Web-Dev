@@ -15,6 +15,7 @@
 <body>
     <input type="text">
     <button onclick="addTodo()">Add Todo's</button>
+    <ol></ol>
 </body>
 <script>
     let counter = 1;
@@ -22,16 +23,16 @@
         const inputElement = document.querySelector('input');
         const inputValue = inputElement.value;
 
-        const divElements = document.createElement('div');
+        const divElements = document.createElement('li');
         divElements.id = `todo${counter}`;
         divElements.innerHTML = `<span>${inputValue}</span><span>&nbsp&nbsp</span><button onclick="deleteNode(${counter})">Delete</button>`;
 
-        document.querySelector('body').appendChild(divElements);
-        counter++;
+        document.querySelector('ol').appendChild(divElements);
+        counter++
     }
 
     function deleteNode(index){
-        const delElement = document.querySelector('#todo' + index);
+        const delElement = document.querySelector('#todo' + index)
         delElement.parentNode.removeChild(delElement);
 
         // const parentElement = document.querySelector('body');
