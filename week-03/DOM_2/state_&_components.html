@@ -68,7 +68,8 @@
         const button = document.createElement('button');
 
         button.innerHTML = 'Delete';
-        button.onclick = () => deleteTodo(todos.indexOf(todo));
+        button.setAttribute('onclick', `deleteTodo(todos.indexOf(${todo}))`);
+        // button.onclick = () => deleteTodo(todos.indexOf(todo));
         h1.innerHTML = todo.title;
         li.appendChild(h1);
         li.appendChild(button);
