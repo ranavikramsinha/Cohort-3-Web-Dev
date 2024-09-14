@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/01_.css">
+    <title>State Derived Frontends</title>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <ol id="todos"></ol>
+
+    <input type="text"></input>
+    <button onclick="addTodo()">Add Todo</button>
+    <button onclick="deleteFirstTodo()">Delete First Todo</button>
+    <button onclick="deleteLastTodo()">Delete Last Todo</button>
+
+
+    <script>
+      let todos = [];
+
+        // setInterval(() => {
+        //     todos.push({
+        //     title: Math.floor((Math.random() * 10) + 1),
+        // });
+        // render();
+        // }, 2000)
+
+
+      function addTodo() {
+        todos.push({
+          title: document.querySelector("input").value,
+        })
+        render();
+      }
+
+      function deleteTodo(index){
+        if(index >= 0 && index < todos.length){
+          todos.splice(index, 1);
+        }
+        render();
+      }
+
+      function deleteFirstTodo(){
+        if(todos.length){
+            todos.shift();
+        }
+
+        render();
+      }
+
+      function deleteLastTodo(){
+        if(todos.length){
+          todos.pop();
+        }
+
+        render();
+      }
+
+      function createTodoComponent(todo){
+
+        if(!todo.title){
+          return null;
+        }
+
+        const li = document.createElement('li');
+        const h1 = document.createElement('h1');
+        const button = document.createElement('button');
+
+        button.innerHTML = 'Delete';
+        button.onclick = () => deleteTodo(todos.indexOf(todo));
+        h1.innerHTML = todo.title;
+        li.appendChild(h1);
+        li.appendChild(button);
+        return li;
+      }
+
+      function render() {
+        document.querySelector('#todos').innerHTML = '';
+
+        for(let i = 0; i < todos.length; i++){
+            const element = createTodoComponent(todos[i]);
+            document.querySelector('#todos').appendChild(element);
+        }
+
+        document.querySelector('input').value = '';
+      }
+
+    </script>
+</body>
+</html>
