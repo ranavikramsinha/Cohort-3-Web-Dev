@@ -34,12 +34,17 @@
         render();
       }
 
-      function deleteTodo(index){
-        if(index >= 0 && index < todos.length){
-          todos.splice(index, 1);
-        }
+      function deleteTodo(index) {
+        todos = todos.filter(todo => todo.index !== index);
         render();
       }
+
+      // function deleteTodo(index){
+      //   if(index >= 0 && index < todos.length){
+      //     todos.splice(index, 1);
+      //   }
+      //   render();
+      // }
 
       function deleteFirstTodo(){
         if(todos.length){
